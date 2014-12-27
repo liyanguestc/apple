@@ -19,10 +19,7 @@ var newMeshReady = false;
 window.onload = function() {
     console.log("onload");
     Init();
-    if(newMeshReady === true){
-      animate();
-    }
-    
+    animate();
 };
 
 function Init() {
@@ -103,7 +100,7 @@ function addObjectsToScene() {
         color: 0xffdd99
     });
     var planeGeometry = new THREE.PlaneGeometry(80, 60, 10, 10);
-    console.log(planeGeometry);
+   // console.log(planeGeometry);
     for (var i=0; i<(planeGeometry.vertices.length); i++) {
         var qq = planeGeometry.vertices[i].x;
         planeGeometry.vertices[i].z = 0.005*qq*qq;
