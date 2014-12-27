@@ -9,7 +9,7 @@ var mesh1, mesh2, mesh3;
 var sizeM = 45;
 var sizeMesh1=sizeM, sizeMesh2=sizeM, sizeMesh3=sizeM;
 var depthCompress = 0.3;
-var z0 = -5
+var z0 = -5;
 var worldRadius = 15;
 var textRadius = 1.75*worldRadius;
 var relcoeff = -0.3;
@@ -29,7 +29,7 @@ function Init() {
         cameraPosition: new THREE.Vector3(_camPosition.x, _camPosition.y, _camPosition.z),
         targetPosition: new THREE.Vector3(_tarPosition.x, _tarPosition.y, _tarPosition.z)
     });
-    camera.visible=false;c
+    camera.visible=false;
     scene.add(camera);
 
     //setup rendering parameter
@@ -57,7 +57,7 @@ function animate() {
     var time = Date.now() * 0.001;
     
     mesh1.rotation.set(-Math.PI/2+0.2*Math.sin(3.2*time), 0*Math.PI/2, -Math.PI/2+0.25*Math.sin(4*time));
-    mesh1.position.z = -2
+    mesh1.position.z = -2;
 
     renderer.setClearColor(new THREE.Color().setRGB(1.0, 1.0, 1.0));
     renderer.Leia_render({
@@ -172,7 +172,7 @@ function readSTLs(filename1, filename2, filename3)
         var xhr1 = new XMLHttpRequest();
         xhr1.onreadystatechange = function () {
         if ( xhr1.readyState == 4 ) {
-                if ( xhr1.status == 200 || xhr1.status == 0 ) {
+                if ( xhr1.status == 200 || xhr1.status === 0 ) {
                         var rep = xhr1.response; // || xhr1.mozResponseArrayBuffer;
                         //mesh1 = parseStlBinary(rep, 0xffffff);
                         mesh1 = parseStlBinary(rep, 0xff1111);
@@ -186,10 +186,10 @@ mesh1.material.metal = true;
                         newMeshReady = true;
                         }
                 }
-        }
+        };
         xhr1.onerror = function(e) {
                 console.log(e);
-        }
+        };
         xhr1.open( "GET", filename1, true );
         xhr1.responseType = "arraybuffer";
         xhr1.send( null );
