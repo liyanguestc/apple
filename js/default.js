@@ -14,11 +14,15 @@ var worldRadius = 15;
 var textRadius = 1.75*worldRadius;
 var relcoeff = -0.3;
 var spotLight;
+var newMeshReady = false;
 
 window.onload = function() {
     console.log("onload");
     Init();
-    animate();
+    if(newMeshReady === true){
+      animate();
+    }
+    
 };
 
 function Init() {
