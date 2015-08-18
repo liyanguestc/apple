@@ -112,7 +112,7 @@ function addObjectsToScene() {
     scene.add(plane);
 
     var helloWorldGeometry = new THREE.TextGeometry(
-        "Apple", {
+        "Pear", {
             size: 9,
             height: 2,
             curveSegments: 4,
